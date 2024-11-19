@@ -1,7 +1,7 @@
 <template>
   <section class="w-[1200px] mx-auto my-16">
     <div class="grid grid-cols-2">
-      <DepositYieldCalculator />
+      <DepositCalculator />
       <InfoBlock />
     </div>
   </section>
