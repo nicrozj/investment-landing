@@ -4,48 +4,21 @@ const form = ref({
   patrynomic: "",
   birthDate: "",
   phone: "",
-  personalData: "",
+  personalData: "true",
 });
-
-const formErrors = ref({
-  name: "",
-  surname: "",
-  patrynomic: "",
-  birthDate: "",
-  phone: "",
-  personalData: "",
-});
-
-const ERROR_MESSAGES = {
-  required: "Поле необходимо заполнить",
-};
 
 function validateForm() {
-  const requiredFields = [
-    "name",
-    "surname",
-    "patrynomic",
-    "birthDate",
-    "phone",
-		"personalData"
-  ];
-  requiredFields.forEach((field) => {
-    formErrors.value[field] = form.value[field] ? "" : ERROR_MESSAGES.required;
-  });
-
-  const hasErrors = Object.values(formErrors.value).some(
-    (error) => error !== ""
-  );
-
-  if (!hasErrors) {
+  const hasEmptyField = Object.values(form.value).some((value) => !value);
+  if (!hasEmptyField) {
     console.log(form.value);
+  } else {
+      console.log("Не все поля заполнены!")
   }
 }
 
 export function useApplicationForm() {
   return {
     form,
-    formErrors,
     validateForm,
   };
 }

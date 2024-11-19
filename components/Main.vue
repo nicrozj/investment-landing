@@ -11,6 +11,6 @@
         <ApplicationForm />
       </div>
     </div>
-    
+
   </section>
 </template>
