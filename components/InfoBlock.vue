@@ -2,7 +2,7 @@
 const { percent, income, finalAmount } = useCalculation();
 
 function formatMoney(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return new Intl.NumberFormat("ru-RU").format(x);
 }
 </script>
 
